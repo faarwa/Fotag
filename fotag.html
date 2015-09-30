@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fotag!</title>
+
+    <!--
+    All of your CSS must go in css/fotag.css. Do not add styles to individual elements.
+    All of your CSS must be your own -- you may not use third-party CSS, like Bootstrap.
+    -->
+    <link rel="stylesheet" href="css/fotag.css"/>
+    <style>
+        .marking-button {
+            float:right;
+        }
+        .marking-div-clear {
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+
+<!-- This header can be replaced -->
+<div id="app-container">
+    <!--
+         An attachment point to place all of your dynamically created content. Do not remove or
+         rename this div.
+    -->
+</div>
+
+<!-- View templates -->
+<template id="toolbar-template">
+    <div class="nav-bar">
+        <div id="header-title">Fotag!</div>
+        <button id="grid-button" class="view-button" type="button"><img src="gridicon.png" width="25" height="25"></img></button>
+        <button id="list-button" class="view-button" type="button"><img src="listbutton.png" width="25" height="25"></img></button>
+        <div class="filter">
+            <button id="clear-filter-button" type="button">Clear</button>
+            Apply filter:
+        </div>
+    </div>
+</template>
+
+<template id="star-rating-template">
+    <div class="rating">
+        <input id="rating5" class="myrating" type="radio" value="5" /><span>☆</span>
+        <input id="rating4" class="myrating" type="radio" value="4" /><span>☆</span>
+        <input id="rating3" class="myrating" type="radio" value="3" /><span>☆</span>
+        <input id="rating2" class="myrating" type="radio" value="2" /><span>☆</span>
+        <input id="rating1" class="myrating" type="radio" value="1" /><span>☆</span>
+    </div>
+</template>
+
+<template id="star-filter-template">
+    <div class="rating">
+        <input name="myfilter" type="radio" value="5" /><span>☆</span>
+        <input name="myfilter" type="radio" value="4" /><span>☆</span>
+        <input name="myfilter" type="radio" value="3" /><span>☆</span>
+        <input name="myfilter" type="radio" value="2" /><span>☆</span>
+        <input name="myfilter" type="radio" value="1" /><span>☆</span>
+    </div>
+</template>
+
+<template id="image-template">
+    <div class="image-view">
+        <img class="image"></img>
+        <div class="img-metadata">
+            <div class="image-name"></div>
+            <div class="image-caption-editable" contentEditable=true></div>
+            <div class="image-last-modified">Last modified: </div>
+        </div>
+    </div>
+</template>
+
+<template id="image-collection-template">
+    <div class="image-collection">  
+    </div>
+</template>
+
+<!-- A template for a file chooser, to select multiple files. See FileChooser in view.js. -->
+<template id="file-chooser">
+    <input type="file" class="files-input" name="file_results[]" multiple />
+    <output id="list"></output>
+</template>
+
+<!-- Keep this here so TAs can run your unit tests -->
+<div id="unit-tests">
+
+    <!-- This button is for marking purposes to test your architecture. Do not remove it-->
+    <button class="marking-button">Mark Me!</button>
+    <div class="marking-div-clear"></div>
+
+    <a href="unit_tests.html">Run Unit Tests</a>
+</div>
+
+<script src="js/ext/underscore.js"></script>
+<script src="js/model.js"></script>
+<script src="js/view.js"></script>
+<script src="js/fotag.js"></script>
+<script src="js/markers_code.js"></script>
+</body>
+</html>
